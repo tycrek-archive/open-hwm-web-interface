@@ -1,0 +1,25 @@
+body {
+  background-color: $background-color;
+}
+
+#data-table {
+  table-layout: fixed;
+  width: 80%;
+  td {
+    text-align: center;
+  }
+}
+
+.col-4.panel {
+  text-align: center;
+}
+
+.data-table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 0 10%
+}
+
+.basic {
+  color: $basic-color;
+}

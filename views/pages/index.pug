@@ -1,0 +1,123 @@
+extends ../_main
+block content
+	.col-12: center
+		br
+		br
+		table
+			tr
+				td(style='text-align: right;'): strong Address:
+				td: input#address(type='text')
+			tr
+				td(style='text-align: right;'): strong Port:
+				td: input#port(type='number')
+			tr: td &nbsp;
+			tr
+				th(colspan=2): button(onclick='monitor();') Start
+		br
+		br
+	.col-4.panel#cpu-col
+		h2 CPU
+		table.data-table
+			tr
+				th(rowspan='3') Temp
+				th Value
+				th#cpu-temp-val --
+			tr
+				th.basic Min
+				th.basic#cpu-temp-min --
+			tr
+				th.basic Max
+				th.basic#cpu-temp-max --
+			tr
+				th(rowspan='3') Clocks
+				th Avg
+				th.basic#cpu-clocks-val --
+			tr
+				th.basic Min
+				th.basic#cpu-clocks-min --
+			tr
+				th.basic Max
+				th.basic#cpu-clocks-max --
+			tr
+				th(rowspan='3') Load
+				th Avg
+				th#cpu-load-val --
+			tr
+				th.basic Min
+				th.basic#cpu-load-min --
+			tr
+				th.basic Max
+				th.basic#cpu-load-max --
+
+	.col-4.panel#gpu-col
+		h2 GPU
+		table.data-table
+			tr
+				th(rowspan='3') Temp
+				th Value
+				th#gpu-temp-val --
+			tr
+				th.basic Min
+				th.basic#gpu-temp-min --
+			tr
+				th.basic Max
+				th.basic#gpu-temp-max --
+			tr
+				th(rowspan='3') Clocks
+				th Value
+				th#gpu-clocks-val --
+			tr
+				th.basic Min
+				th.basic#gpu-clocks-min --
+			tr
+				th.basic Max
+				th.basic#gpu-clocks-max --
+			tr
+				th(rowspan='3') Load
+				th Value
+				th#gpu-load-val --
+			tr
+				th.basic Min
+				th.basic#gpu-load-min --
+			tr
+				th.basic Max
+				th.basic#gpu-load-max --
+			tr
+				th(rowspan='3') RAM
+				th Percent
+				th#gpu-ram-percent --
+			tr
+				th.basic Used
+				th.basic#gpu-ram-used --
+			tr
+				th.basic Free
+				th.basic#gpu-ram-free --
+
+	.col-4.panel#ram-col
+		h2 RAM
+		table.data-table
+			tr
+				th(rowspan='3') Data
+				th Percent
+				th#ram-data-percent --
+			tr
+				th.basic Used
+				th.basic#ram-data-used --
+			tr
+				th.basic Free
+				th.basic#ram-data-free --
+
+block append scripts
+	script(src='/monitor.js')
+	//- Links to any extra external or inline scripts/stylesheets.
+		Can use either block to replace all defaults (not recommended!)
+		Or can use append to add on to existing defaults (recommended).
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?
