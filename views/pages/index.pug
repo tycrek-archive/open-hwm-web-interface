@@ -12,100 +12,100 @@ block content
 				td: input#port(type='number')
 			tr: td &nbsp;
 			tr
-				th(colspan=2): button(onclick='monitor();') Start
+				td(colspan=2): button(onclick='monitor();') Start
 		br
 		br
 	.col-4.panel#cpu-col
-		h2 CPU
+		h2: i.far.fa-microchip.fa-3x
 		table.data-table
 			tr
-				th(rowspan='3') Temp
-				th Value
-				th#cpu-temp-val --
+				td.left.top.tl-corner(rowspan='3') Temp
+				td.center.top Value
+				td.right.top.tr-corner#cpu-temp-val --
 			tr
-				th.basic Min
-				th.basic#cpu-temp-min --
+				td.basic.center Min
+				td.basic.right#cpu-temp-min --
 			tr
-				th.basic Max
-				th.basic#cpu-temp-max --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#cpu-temp-max --
 			tr
-				th(rowspan='3') Clocks
-				th Avg
-				th.basic#cpu-clocks-val --
+				td.left.top(rowspan='3') Clocks
+				td.center.top Avg
+				td.basic.right.top#cpu-clocks-val --
 			tr
-				th.basic Min
-				th.basic#cpu-clocks-min --
+				td.basic.center Min
+				td.basic.right#cpu-clocks-min --
 			tr
-				th.basic Max
-				th.basic#cpu-clocks-max --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#cpu-clocks-max --
 			tr
-				th(rowspan='3') Load
-				th Avg
-				th#cpu-load-val --
+				td.left.top.bottom.bl-corner(rowspan='3') Load
+				td.center.top Avg
+				td.top.right#cpu-load-val --
 			tr
-				th.basic Min
-				th.basic#cpu-load-min --
+				td.basic.center Min
+				td.basic.right#cpu-load-min --
 			tr
-				th.basic Max
-				th.basic#cpu-load-max --
+				td.basic.center.bottom.b-pad Max
+				td.basic.right.bottom.br-corner.b-pad#cpu-load-max --
 
 	.col-4.panel#gpu-col
-		h2 GPU
+		h2: i.far.fa-desktop.fa-3x
 		table.data-table
 			tr
-				th(rowspan='3') Temp
-				th Value
-				th#gpu-temp-val --
+				td.left.top.tl-corner(rowspan='3') Temp
+				td.center.top Value
+				td.top.right.tr-corner#gpu-temp-val --
 			tr
-				th.basic Min
-				th.basic#gpu-temp-min --
+				td.basic.center Min
+				td.basic.right#gpu-temp-min --
 			tr
-				th.basic Max
-				th.basic#gpu-temp-max --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#gpu-temp-max --
 			tr
-				th(rowspan='3') Clocks
-				th Value
-				th#gpu-clocks-val --
+				td.left.top(rowspan='3') Clocks
+				td.center.top Value
+				td.top.right#gpu-clocks-val --
 			tr
-				th.basic Min
-				th.basic#gpu-clocks-min --
+				td.basic.center Min
+				td.basic.right#gpu-clocks-min --
 			tr
-				th.basic Max
-				th.basic#gpu-clocks-max --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#gpu-clocks-max --
 			tr
-				th(rowspan='3') Load
-				th Value
-				th#gpu-load-val --
+				td.left.top(rowspan='3') Load
+				td.center.top Value
+				td.top.right#gpu-load-val --
 			tr
-				th.basic Min
-				th.basic#gpu-load-min --
+				td.basic.center Min
+				td.basic.right#gpu-load-min --
 			tr
-				th.basic Max
-				th.basic#gpu-load-max --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#gpu-load-max --
 			tr
-				th(rowspan='3') RAM
-				th Percent
-				th#gpu-ram-percent --
+				td.left.top.bottom.bl-corner(rowspan='3') RAM
+				td.center.top Percent
+				td.right.top#gpu-ram-percent --
 			tr
-				th.basic Used
-				th.basic#gpu-ram-used --
+				td.basic.center Used
+				td.basic.right#gpu-ram-used --
 			tr
-				th.basic Free
-				th.basic#gpu-ram-free --
+				td.basic.center.bottom.b-pad Free
+				td.basic.right.bottom.br-corner.b-pad#gpu-ram-free --
 
 	.col-4.panel#ram-col
-		h2 RAM
+		h2: i.far.fa-memory.fa-3x
 		table.data-table
 			tr
-				th(rowspan='3') Data
-				th Percent
-				th#ram-data-percent --
+				td.top.bottom.left.tl-corner.bl-corner(rowspan='3') Data
+				td.center.top Percent
+				td.right.top.tr-corner#ram-data-percent --
 			tr
-				th.basic Used
-				th.basic#ram-data-used --
+				td.basic.center Used
+				td.basic.right#ram-data-used --
 			tr
-				th.basic Free
-				th.basic#ram-data-free --
+				td.basic.center.bottom.b-pad Free
+				td.basic.right.bottom.br-corner.b-pad#ram-data-free --
 
 block append scripts
 	script(src='/monitor.js')

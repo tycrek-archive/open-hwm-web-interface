@@ -2,24 +2,35 @@ body {
   background-color: $background-color;
 }
 
-#data-table {
-  table-layout: fixed;
-  width: 80%;
-  td {
-    text-align: center;
-  }
-}
-
 .col-4.panel {
   text-align: center;
 }
 
 .data-table {
   table-layout: fixed;
+  border-collapse: separate;
+  border-spacing:0;
   width: 100%;
-  padding: 0 10%
-}
+  padding: 0 10%;
+  
+  .basic {
+    color: $basic-color;
+  }
 
-.basic {
-  color: $basic-color;
+  td {
+//    line-height: 1.5rem;
+//    padding: 0 0 8px 0;
+    height: 32px;
+    &.top { border-top: 1px solid white; }
+    &.left { border-left: 1px solid white; }
+    &.right { border-right: 1px solid white; }
+    &.bottom { border-bottom: 1px solid white; }
+    &.tl-corner { border-top-left-radius: 8px; }
+    &.tr-corner { border-top-right-radius: 8px; }
+    &.bl-corner { border-bottom-left-radius: 8px; }
+    &.br-corner { border-bottom-right-radius: 8px; }
+    &.b-pad { padding-bottom: 2px; }
+    &:not(.basic) { font-weight: bold; }
+    &[rowspan="3"] { font-size: 1.2rem; }
+  }
 }

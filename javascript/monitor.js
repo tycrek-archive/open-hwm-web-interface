@@ -5,7 +5,7 @@ const COLOURS = {
 
 var loop;
 function monitor() {
-	loop = setInterval(loopFunction, 1000)
+	loop = setInterval(loopFunction, 2000);
 }
 
 function loopFunction() {
