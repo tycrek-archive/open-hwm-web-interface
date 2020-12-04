@@ -2,7 +2,6 @@ extends ../_main
 block content
 	.col-12: center
 		br
-		br
 		table
 			tr
 				td(style='text-align: right;'): strong Address:
@@ -12,8 +11,7 @@ block content
 				td: input#port(type='number')
 			tr: td &nbsp;
 			tr
-				td(colspan=2): button(onclick='monitor();') Start
-		br
+				td.button-td(colspan=2): button#monitor-button(onclick='monitor();') Start
 		br
 	.col-4.panel#cpu-col
 		h2: i.far.fa-microchip.fa-3x
@@ -39,15 +37,45 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#cpu-clocks-max --
 			tr
-				td.left.top.bottom.bl-corner(rowspan='3') Load
+				td.left.top(rowspan='3') Load
 				td.center.top Avg
 				td.top.right#cpu-load-val --
 			tr
 				td.basic.center Min
 				td.basic.right#cpu-load-min --
 			tr
-				td.basic.center.bottom.b-pad Max
-				td.basic.right.bottom.br-corner.b-pad#cpu-load-max --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#cpu-load-max --
+			tr
+				td.top.left(rowspan='3') RAM
+				td.center.top Percent
+				td.right.top#ram-data-percent --
+			tr
+				td.basic.center Used
+				td.basic.right#ram-data-used --
+			tr
+				td.basic.center.b-pad Free
+				td.basic.right.b-pad#ram-data-free --
+			tr
+				td.top.left(rowspan='3') Voltage
+				td.center.top Value
+				td.right.top#cpu-volt-val --
+			tr
+				td.basic.center Min
+				td.basic.right#cpu-volt-min --
+			tr
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#cpu-volt-max --
+			tr
+				td.top.bottom.left.bl-corner(rowspan='3') Power
+				td.center.top Value
+				td.right.top#cpu-power-val --
+			tr
+				td.basic.center Min
+				td.basic.right#cpu-power-min --
+			tr
+				td.basic.bottom.center.b-pad Max
+				td.basic.right.bottom.br-corner.b-pad#cpu-power-max --
 
 	.col-4.panel#gpu-col
 		h2: i.far.fa-desktop.fa-3x
@@ -83,29 +111,99 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#gpu-load-max --
 			tr
-				td.left.top.bottom.bl-corner(rowspan='3') RAM
+				td.left.top(rowspan='3') RAM
 				td.center.top Percent
 				td.right.top#gpu-ram-percent --
 			tr
 				td.basic.center Used
 				td.basic.right#gpu-ram-used --
 			tr
-				td.basic.center.bottom.b-pad Free
-				td.basic.right.bottom.br-corner.b-pad#gpu-ram-free --
+				td.basic.center.b-pad Free
+				td.basic.right.b-pad#gpu-ram-free --
+			tr
+				td.top.bottom.left.bl-corner(rowspan='3') Power
+				td.center.top Value
+				td.right.top#gpu-power-val --
+			tr
+				td.basic.center Min
+				td.basic.right#gpu-power-min --
+			tr
+				td.basic.bottom.center.b-pad Max
+				td.basic.right.bottom.br-corner.b-pad#gpu-power-max --
 
-	.col-4.panel#ram-col
-		h2: i.far.fa-memory.fa-3x
+	.col-4.panel#fan-panel
+		h2: i.far.fa-fan.fa-3x
 		table.data-table
 			tr
-				td.top.bottom.left.tl-corner.bl-corner(rowspan='3') Data
-				td.center.top Percent
-				td.right.top.tr-corner#ram-data-percent --
+				td.top.left.tl-corner(rowspan='3') GPU Fan
+				td.center.top Speed
+				td.right.top.tr-corner#fan-gpu-speed --
 			tr
-				td.basic.center Used
-				td.basic.right#ram-data-used --
+				td.basic.center Min
+				td.basic.right#fan-gpu-min --
 			tr
-				td.basic.center.bottom.b-pad Free
-				td.basic.right.bottom.br-corner.b-pad#ram-data-free --
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#fan-gpu-max --
+			tr
+				td.top.left(rowspan='3')#fan-1-label Fan #?
+				td.center.top Speed
+				td.right.top#fan-1-speed --
+			tr
+				td.basic.center Min
+				td.basic.right#fan-1-min --
+			tr
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#fan-1-max --
+			tr
+				td.top.left(rowspan='3')#fan-2-label Fan #?
+				td.center.top Speed
+				td.right.top#fan-2-speed --
+			tr
+				td.basic.center Min
+				td.basic.right#fan-2-min --
+			tr
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#fan-2-max --
+			tr
+				td.top.left(rowspan='3')#fan-3-label Fan #?
+				td.center.top Speed
+				td.right.top#fan-3-speed --
+			tr
+				td.basic.center Min
+				td.basic.right#fan-3-min --
+			tr
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#fan-3-max --
+			tr
+				td.top.left(rowspan='3')#fan-4-label Fan #?
+				td.center.top Speed
+				td.right.top#fan-4-speed --
+			tr
+				td.basic.center Min
+				td.basic.right#fan-4-min --
+			tr
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#fan-4-max --
+			tr
+				td.top.left(rowspan='3')#fan-5-label Fan #?
+				td.center.top Speed
+				td.right.top#fan-5-speed --
+			tr
+				td.basic.center Min
+				td.basic.right#fan-5-min --
+			tr
+				td.basic.center.b-pad Max
+				td.basic.right.b-pad#fan-5-max --
+			tr
+				td.top.left.bottom.bl-corner(rowspan='3')#fan-6-label Fan #?
+				td.center.top Speed
+				td.right.top#fan-6-speed --
+			tr
+				td.basic.center Min
+				td.basic.right#fan-6-min --
+			tr
+				td.basic.center.b-pad.bottom Max
+				td.basic.right.b-pad.bottom.br-corner#fan-6-max --	
 
 block append scripts
 	script(src='/monitor.js')

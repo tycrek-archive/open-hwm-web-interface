@@ -1,9 +1,15 @@
 body {
   background-color: $background-color;
+  padding-bottom: 4em;
 }
 
 .col-4.panel {
   text-align: center;
+}
+
+td.button-td { text-align: center; }
+button#monitor-button {
+  width: 128px;
 }
 
 .data-table {
@@ -18,9 +24,8 @@ body {
   }
 
   td {
-//    line-height: 1.5rem;
-//    padding: 0 0 8px 0;
     height: 32px;
+
     &.top { border-top: 1px solid white; }
     &.left { border-left: 1px solid white; }
     &.right { border-right: 1px solid white; }
