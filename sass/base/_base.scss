@@ -39,3 +39,8 @@ button#monitor-button {
     &[rowspan="3"] { font-size: 1.2rem; }
   }
 }
+
+#status {
+  color:#F44336;
+  transition: color 0.3s;
+}

@@ -10,9 +10,8 @@ block content
 				td(style='text-align: right;'): strong Port:
 				td: input#port(type='number')
 			tr: td &nbsp;
-			tr
-				td.button-td(colspan=2): button#monitor-button(onclick='monitor();') Start
-		br
+			tr: td.button-td(colspan=2): button#monitor-button(onclick='monitor();') Start
+			tr: td.button-td(colspan=2): strong#status Disconnected
 	.col-4.panel#cpu-col
 		h2: i.far.fa-microchip.fa-3x
 		table.data-table
@@ -145,7 +144,7 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#fan-gpu-max --
 			tr
-				td.top.left(rowspan='3')#fan-1-label Fan #?
+				td.basic.top.left(rowspan='3')#fan-1-label Fan #?
 				td.center.top Speed
 				td.right.top#fan-1-speed --
 			tr
@@ -155,7 +154,7 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#fan-1-max --
 			tr
-				td.top.left(rowspan='3')#fan-2-label Fan #?
+				td.basic.top.left(rowspan='3')#fan-2-label Fan #?
 				td.center.top Speed
 				td.right.top#fan-2-speed --
 			tr
@@ -165,7 +164,7 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#fan-2-max --
 			tr
-				td.top.left(rowspan='3')#fan-3-label Fan #?
+				td.basic.top.left(rowspan='3')#fan-3-label Fan #?
 				td.center.top Speed
 				td.right.top#fan-3-speed --
 			tr
@@ -175,7 +174,7 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#fan-3-max --
 			tr
-				td.top.left(rowspan='3')#fan-4-label Fan #?
+				td.basic.top.left(rowspan='3')#fan-4-label Fan #?
 				td.center.top Speed
 				td.right.top#fan-4-speed --
 			tr
@@ -185,7 +184,7 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#fan-4-max --
 			tr
-				td.top.left(rowspan='3')#fan-5-label Fan #?
+				td.basic.top.left(rowspan='3')#fan-5-label Fan #?
 				td.center.top Speed
 				td.right.top#fan-5-speed --
 			tr
@@ -195,7 +194,7 @@ block content
 				td.basic.center.b-pad Max
 				td.basic.right.b-pad#fan-5-max --
 			tr
-				td.top.left.bottom.bl-corner(rowspan='3')#fan-6-label Fan #?
+				td.basic.top.left.bottom.bl-corner(rowspan='3')#fan-6-label Fan #?
 				td.center.top Speed
 				td.right.top#fan-6-speed --
 			tr

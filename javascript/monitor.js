@@ -2,6 +2,7 @@ var RUNNING = false;
 var loop;
 
 const COLOURS = {
+	good: '#4CAF50',
 	caution: '#FFC107',
 	danger: '#F44336'
 }
@@ -9,10 +10,13 @@ const COLOURS = {
 function monitor() {
 	if (!RUNNING) {
 		loop = setInterval(loopFunction, 2000);
-		$('button#monitor-button').text('Stop')
+		$('button#monitor-button').text('Stop');
+		$('#status').text('Connecting...');
+		$('#status').css('color', COLOURS.caution);
 	} else {
 		clearInterval(loop);
-		$('button#monitor-button').text('Start')
+		$('button#monitor-button').text('Start'); $('#status').text('Disconnected');
+		$('#status').css('color', COLOURS.danger);
 	}
 	RUNNING = !RUNNING;
 }
@@ -20,7 +24,11 @@ function monitor() {
 function loopFunction() {
 	getData()
 		.then(updateTable)
-		.catch(console.error);
+		.catch((err) => {
+			console.error(err);
+			$('#status').text('Error, see console for details');
+			$('#status').css('color', COLOURS.caution);
+		});
 }
 
 function getData() {
@@ -35,6 +43,8 @@ function getData() {
 }
 
 function updateTable(d) {
+	$('#status').text('Connected');
+	$('#status').css('color', COLOURS.good);
 	let data = {
 		cpu: {
 			temp: d.Children[0].Children[1].Children[1].Children[0],
@@ -180,6 +190,8 @@ function updateTable(d) {
 			fanElems[i * 4 + 1].text(data.fan[i].Value);
 			fanElems[i * 4 + 2].text(data.fan[i].Min);
 			fanElems[i * 4 + 3].text(data.fan[i].Max);
+
+			fanElems[i * 4].removeClass('basic');
 		} catch (err) { };
 	}
 
